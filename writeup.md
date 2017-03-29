@@ -24,7 +24,7 @@ A separate training, validation and test datasets were provided by Udacity as pi
 Investigating the number of samples in the training set for each of the 43 labels, it became apparent that not all classes are represented equally in the training sample. This could introduce a bias for the network as it will see certain types of traffic signs more often than others. In order to fix this issue, in the next section, I augmented the training set by adding modified images to the classes which were under-represented. The first step to achieve this was to identify the number of images that are needed to be added per class in order to arrive at an equally represented sample. For example label 2 (speed limit 50km/h) is the most represented class, with 2010 examples in the training set. However label 13 (Yield)  has only 1920 samples in the training set. So in order to have equal samples in both case, I need to add an extra 90 Yield sign examples. This is done by randomly taking 90 exisiting Yield images and modify them one way or another and adding them to the training pool. Below I explain the different modification methods that were used for this purpose. 
 
 
-In order to augment the training dataset, I used ? differnet approaches:
+In order to augment the training dataset, I used 5 differnet approaches:
  * Adding Gaussian Noise
  * Converting to gray scale 
  * Adding blurr
@@ -59,4 +59,10 @@ My best training accuracy is 0.995 and highest validation accuracy is 0.953 whic
 
 
 ### Test a Model on New Images
+As for testing I found several images for German traffic signs on the web. I downloaded them and cropped them to square shapes and then loaded and resized them to 32x32 as the rest of the images for this network.
+I then normalzied and subtracted the mean of the training data set from them. The before and after of this process is visialuzed in the notebook for all 7 images. The test data includes the following signs: No entry, Road work, General caution, Roundabout mandatory, Yield, Speed Limit (120km/h) and Wild animals crossing.
 
+After using the trained network to predict the relevant class, the result show that for 5 out of 7 cases the prediction is correct. In case of the Speed Limit (120km/h) image, the prediction is Speed limit (20km/h) which is interesting. At least the network figured that the sign is a speed limit sign, and had trouble identiying the actual value. In case of the Wild animals crossing sign, the network fails and predict the sign to be Beware snow/ice.
+Following this I used the optional visualization section to visualize various stages of the netwrok and in the case of this image, it seems that the network is successful in picking up the triangular shape of the sign but almost doesn't identify anything interesting in the center. Inspecting the test image in this case carefully, shows a spiral watermark overlaid the sign and I wonder if that is the cause of confusion for the network.
+
+As a final step I plot the top 5 softmax probabilities for each of the test images. I have chosen a log scale to show the other lower probabilities better, since the network is very confident with the predictions every time and the highest class is much more probable than the other four. 
