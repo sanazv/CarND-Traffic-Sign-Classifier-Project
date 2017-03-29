@@ -1,7 +1,7 @@
-**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 Please find the code in 'Traffic_Sign_Classifier.ipynb' file as part of this repo. The outputs of all the cells can be found in the 'Traffic_Sign_Classifier.html' file. I am also including the test images which are in the 'german_traffic_signs' directory.
 
-**Build a Traffic Sign Recognition Project**
+# **Build a Traffic Sign Recognition Project**
 The goal of this project was to classify images of various German traffic signs.
 The following steps were taken:
 * Load the data set (see below for links to the project data set)
@@ -13,7 +13,7 @@ The following steps were taken:
 * Summarize the results with a written report
 
 
-##Data Set Summary & Exploration
+## Data Set Summary & Exploration
 A separate training, validation and test datasets were provided by Udacity as pickle files. Each dataset contained images and labels. Below is a summary of the size and shape of the dataset:
 
 * The size of training set is 34799
@@ -38,7 +38,7 @@ The original training set contained 34799 images, and the augmented set contains
 Next, I compute the mean of all images in the training set and subtract that from each image in the training and valdation (and later test dataset).
 Finally I shuffle the training dataset and have it ready to be fed to the network.
 
-##Design and Test a Model Architecture
+## Design and Test a Model Architecture
 
 The model architecture I used is LeNet which consist of the following layers:
 1. Input layer which is the 32x32x3 image
