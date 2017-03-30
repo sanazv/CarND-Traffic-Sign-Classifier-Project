@@ -55,7 +55,7 @@ learning rate = 0.001
 batch size = 64
 number of ephocs = 24 (since I achive 93% validation accuracy earlier than 24)
 The accuracy values for each ephoc for both training and validation sets are shown as output in the notebook.
-My best training accuracy is 0.995 and highest validation accuracy is 0.953 which were achieved at epoch 21.
+My best training accuracy is 0.993 and highest validation accuracy is 0.943 which were achieved at epoch 19.
 
 
 ### Test a Model on New Images
@@ -66,3 +66,5 @@ After using the trained network to predict the relevant class, the result show t
 Following this I used the optional visualization section to visualize various stages of the netwrok and in the case of this image, it seems that the network is successful in picking up the triangular shape of the sign but almost doesn't identify anything interesting in the center. Inspecting the test image in this case carefully, shows a spiral watermark overlaid the sign and I wonder if that is the cause of confusion for the network.
 
 As a final step I plot the top 5 softmax probabilities for each of the test images. I have chosen a log scale to show the other lower probabilities better, since the network is very confident with the predictions every time and the highest class is much more probable than the other four. 
+
+I have also tested the accuracy of the predictions on the test dataset which shows to be 91.43% which is higher than the test image examples I found on the web. 
