@@ -25881,6 +25881,16 @@ SjMzsxJOlGZmZiWcKM3MzEo4UZqZmZX4/69qpSGfLU18AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>In both cases where the classification predicted by the network is incorrect, the correct class appears at the second highest softmax probability.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Test-the-test-set">Test the test set<a class="anchor-link" href="#Test-the-test-set">&#182;</a></h1>
 </div>
 </div>
@@ -27560,7 +27570,7 @@ QM8YyAAAAACgIAxkAAAAAFAQBjIAAAAAKAgDGQAAAAAUhIEMAAAAAArCQAYAAAAABWEgAwAAAICC
 <p><strong>Answer:</strong> 
 Here I look into visualization of features at some of the layers for an test case where the network failed to classify the image correctly (wild animals crossing).
 Looking at the second convolution layer, it can be seen that the shape of the sign (triangular) shape is picked up by the network nicely. However the marking in the middle seems
-to be lost and as a result the network is predicting 'Bicycles crossing'. This particular image had a water mark on it originally and I wonder if that contributes to the issue.</p>
+to be lost and as a result the network is predicting 'Dangerous curve to the right'. This particular image had a water mark on it originally and I wonder if that contributes to the issue. The correct class has the second highest probability.</p>
 
 </div>
 </div>
