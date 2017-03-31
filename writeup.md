@@ -49,7 +49,7 @@ The model architecture I used is LeNet which consist of the following layers:
 6. Relu activation
 7. Max Pooling layer (2x2) with stride 2x2
 8. and finally two fully connected layers
-
+The reason I chose this well known architecture is that this network works well in classification on images and my experience in the previous lab on alphabet clafficiation confirms that. This time the dataset is in color, but I also added grayscale cases to it.
 As for the hyper parameters, after some trial and error, I setteled for the following values:
 learning rate = 0.001
 batch size = 64
