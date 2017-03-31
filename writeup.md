@@ -55,16 +55,18 @@ learning rate = 0.001
 batch size = 64
 number of ephocs = 24 (since I achive 93% validation accuracy earlier than 24)
 The accuracy values for each ephoc for both training and validation sets are shown as output in the notebook.
-My best training accuracy is 0.993 and highest validation accuracy is 0.943 which were achieved at epoch 19.
-
+My best training accuracy is 0.993 and highest validation accuracy is 0.944 which were achieved at epoch 18.
+I used LeNet archtecture because I thought the problem at hand is very similar to the alphabet classification that we have worked on earlier in the course. And from the accuracy obtained on the test images I believe that it was a good choice. As for the hyper parameters, I started with a higher learning rate and larger batch size but did not achive as good a result as with the values listed above.
 
 ### Test a Model on New Images
 As for testing I found several images for German traffic signs on the web. I downloaded them and cropped them to square shapes and then loaded and resized them to 32x32 as the rest of the images for this network.
 I then normalzied and subtracted the mean of the training data set from them. The before and after of this process is visialuzed in the notebook for all 7 images. The test data includes the following signs: No entry, Road work, General caution, Roundabout mandatory, Yield, Speed Limit (120km/h) and Wild animals crossing.
 
-After using the trained network to predict the relevant class, the result show that for 5 out of 7 cases the prediction is correct. In case of the Speed Limit (120km/h) image, the prediction is Speed limit (20km/h) which is interesting. At least the network figured that the sign is a speed limit sign, and had trouble identiying the actual value. In case of the Wild animals crossing sign, the network fails and predict the sign to be Beware snow/ice.
+After using the trained network to predict the relevant class, the result show that for 5 out of 7 cases the prediction is correct. In case of the Speed Limit (120km/h) image, the prediction is Speed limit (20km/h) which is interesting. At least the network figured that the sign is a speed limit sign, and had trouble identiying the actual value and the correct class has the second highest probability.
+In case of the Wild animals crossing sign, the network fails and predict the sign to be Dangerous curve to the right. In this case again the correct class has the second highest probability.
+
 Following this I used the optional visualization section to visualize various stages of the netwrok and in the case of this image, it seems that the network is successful in picking up the triangular shape of the sign but almost doesn't identify anything interesting in the center. Inspecting the test image in this case carefully, shows a spiral watermark overlaid the sign and I wonder if that is the cause of confusion for the network.
 
 As a final step I plot the top 5 softmax probabilities for each of the test images. I have chosen a log scale to show the other lower probabilities better, since the network is very confident with the predictions every time and the highest class is much more probable than the other four. 
 
-I have also tested the accuracy of the predictions on the test dataset which shows to be 91.43% which is higher than the test image examples I found on the web. 
+I have also tested the accuracy of the predictions on the test dataset which shows to be 88.65% which is higher than the test image examples I found on the web with accuracy of 71.43%. The occasions that the model preformed suboptimally on new images can be contributed in one case to watermark on the image. Also comparing results on 5(7 in my case) arbitrary images is not a good indication of statistics.
